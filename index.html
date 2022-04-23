@@ -84,9 +84,6 @@
                     <button type="button" class="elements__like"> </button>
                 </div>
             </div>
-
-
-
         </section>
 
     </main>
@@ -95,4 +92,18 @@
         <p class="footer__copyrights">&copy; 2020 Mesto Russia</p>
     </footer>
 
+    <div class="popup">
+
+        <div class="popup__container">
+            <h3 class="popup__title">Редактировать профиль</h3>
+            <input name="userName" type="text" class="popup__input popup__input_data_name" id="userName-input" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" pattern="^[a-zA-Zа-яА-я-\s]+$" required>
+            <span class="popup__input-error userName-input-error"></span>
+            <input name="userAbout" type="text" class="popup__input popup__input_data_about" id="userAbout-input" placeholder="Исследователь океана" minlength="2" pattern="^[a-zA-Zа-яА-я-\s]+$" maxlength="200" required>
+            <span class="popup__input-error userAbout-input-error"></span>
+            <button type="button" class="popup__button_save">Сохранить</button>
+
+        </div>
+        <button type="button" class="popup__button_close"></button>
+
+    </div>
 </body>
