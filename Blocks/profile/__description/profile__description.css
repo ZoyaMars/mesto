@@ -6,3 +6,20 @@
     color: #FFFFFF;
     margin: 0;
 }
+
+@media screen and (max-width: 1276px) {
+    .profile__description {}
+}
+
+@media screen and (max-width: 1019px) {
+    .profile__description {}
+}
+
+@media screen and (max-width: 765px) {
+    .profile__description {
+        font-size: 14px;
+        line-height: 17px;
+        text-align: center;
+        padding-top: 14px;
+    }
+}

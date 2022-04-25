@@ -4,3 +4,25 @@
     margin: 0;
     padding-right: 244px;
 }
+
+@media screen and (max-width: 1276px) {
+    .profile__info {
+        max-width: 928px;
+    }
+}
+
+@media screen and (max-width: 1019px) {
+    .profile__info {
+        max-width: 720px;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .profile__info {
+        width: 282px;
+        margin-left: 19px;
+        margin-right: 19px;
+        padding: 0;
+        padding-top: 26px;
+    }
+}

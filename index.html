@@ -25,12 +25,12 @@
 
                 <div class="profile__section">
                     <h2 class="profile__name">Жак-Ив Кусто</h2>
-                    <button type="button" class="profile__edit_button"> </button>
+                    <button type="button" class="profile__edit-button"></button>
                 </div>
 
                 <p class="profile__description">Исследователь океана</p>
             </div>
-            <button type="button" class="profile__add_button"> </button>
+            <button type="button" class="profile__add-button"> </button>
 
         </section>
 
@@ -95,15 +95,15 @@
     <div class="popup">
 
         <div class="popup__container">
-            <h3 class="popup__title">Редактировать профиль</h3>
-            <input name="userName" type="text" class="popup__input popup__input_data_name" id="userName-input" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" pattern="^[a-zA-Zа-яА-я-\s]+$" required>
-            <span class="popup__input-error userName-input-error"></span>
-            <input name="userAbout" type="text" class="popup__input popup__input_data_about" id="userAbout-input" placeholder="Исследователь океана" minlength="2" pattern="^[a-zA-Zа-яА-я-\s]+$" maxlength="200" required>
-            <span class="popup__input-error userAbout-input-error"></span>
-            <button type="button" class="popup__button_save">Сохранить</button>
+            <button type="button" class="popup__button-close"></button>
 
+            <div class="popup__form">
+                <h3 class="popup__title">Редактировать профиль</h3>
+                <input name="userName" type="text" class="popup__field_name" id="userName-input" placeholder="Жак-Ив Кусто" minlength="2" maxlength="40" pattern="^[a-zA-Zа-яА-я-\s]+$" required>
+                <input name="userAbout" type="text" class="popup__field_about" id="userAbout-input" placeholder="Исследователь океана" minlength="2" pattern="^[a-zA-Zа-яА-я-\s]+$" maxlength="200" required>
+                <button type="button" class="popup__button-save">Сохранить</button>
+            </div>
         </div>
-        <button type="button" class="popup__button_close"></button>
 
     </div>
 </body>

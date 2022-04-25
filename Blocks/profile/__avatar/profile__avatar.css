@@ -4,3 +4,19 @@
     border-radius: 50%;
     object-fit: cover;
 }
+
+@media screen and (max-width: 1276px) {
+    .profile__avatar {}
+}
+
+@media screen and (max-width: 1019px) {
+    .profile__avatar {}
+}
+
+@media screen and (max-width: 765px) {
+    .profile__avatar {
+        padding: 0;
+        padding-left: 101px;
+        padding-right: 99px;
+    }
+}

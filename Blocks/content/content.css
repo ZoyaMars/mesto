@@ -1,20 +1,19 @@
 .content {}
 
-
-/* @media screen and (max-width: 1276px) {
-    .page__content {
+@media screen and (max-width: 1276px) {
+    .content {
         max-width: 928px;
     }
 }
 
 @media screen and (max-width: 1019px) {
-    .page__content {
+    .content {
         max-width: 720px;
     }
 }
 
 @media screen and (max-width: 765px) {
-    .page__content {
+    .content {
         max-width: 320px;
     }
-} */
+}

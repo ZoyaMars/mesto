@@ -2,3 +2,18 @@
     display: flex;
     align-items: baseline;
 }
+
+@media screen and (max-width: 1276px) {
+    .profile {}
+}
+
+@media screen and (max-width: 1019px) {
+    .profile {}
+}
+
+@media screen and (max-width: 765px) {
+    .profile {
+        max-width: 282px;
+        margin: 0;
+    }
+}

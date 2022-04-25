@@ -8,3 +8,27 @@
     margin: 0;
     padding-right: 18px;
 }
+
+@media screen and (max-width: 1276px) {
+    .profile__name {
+        max-width: 928px;
+    }
+}
+
+@media screen and (max-width: 1019px) {
+    .profile__name {
+        max-width: 720px;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .profile__name {
+        width: 189px;
+        font-size: 27px;
+        line-height: 33px;
+        text-align: center;
+        color: #FFFFFF;
+        padding: 0;
+        margin-left: 46px;
+    }
+}
