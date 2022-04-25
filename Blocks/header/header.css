@@ -4,14 +4,12 @@
 }
 
 @media screen and (max-width: 1276px) {
-    .header {
-        max-width: 928px;
-    }
+    .header {}
 }
 
 @media screen and (max-width: 1019px) {
     .header {
-        width: 720px;
+        max-width: 600px;
     }
 }
 

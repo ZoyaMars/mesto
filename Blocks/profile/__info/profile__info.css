@@ -5,15 +5,20 @@
     padding-right: 244px;
 }
 
-@media screen and (max-width: 1276px) {
+
+/* @media screen and (max-width: 1276px) {
     .profile__info {
         max-width: 928px;
     }
-}
+} */
 
 @media screen and (max-width: 1019px) {
     .profile__info {
-        max-width: 720px;
+        /* max-width: 600px;
+        padding-right: 100px; */
+        text-align: center;
+        padding-right: 0px;
+        width: 50%;
     }
 }
 
