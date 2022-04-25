@@ -22,3 +22,16 @@
     opacity: 0.8;
     cursor: pointer;
 }
+
+@media screen and (max-width: 765px) {
+    .popup__button-save {
+        width: 238px;
+        height: 46px;
+        font-size: 14px;
+        line-height: 17px;
+        margin-left: 22px;
+        margin-right: 22px;
+        margin-bottom: 25px;
+        margin-top: 45px;
+    }
+}

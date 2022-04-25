@@ -20,3 +20,21 @@
     opacity: 0.8;
     cursor: pointer;
 }
+
+@media screen and (max-width: 1276px) {
+    .popup__button-close {
+        right: 300px;
+    }
+}
+
+@media screen and (max-width: 1019px) {
+    .popup__button-close {
+        right: 150px;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .popup__button-close {
+        right: 0;
+    }
+}
