@@ -17,3 +17,11 @@
     opacity: 0.4;
     cursor: pointer;
 }
+
+.elements__like:focus {
+    width: 22px;
+    height: 19px;
+    left: 385px;
+    top: 1074px;
+    background: #000000;
+}

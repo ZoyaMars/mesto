@@ -5,9 +5,16 @@
     border-radius: 10px;
 }
 
+@media screen and (max-width: 1019px) {
+    .popup__container {
+        margin: 10px 10px;
+    }
+}
+
 @media screen and (max-width: 765px) {
     .popup__container {
         width: 282px;
         height: 322px;
+        margin: 0;
     }
 }
