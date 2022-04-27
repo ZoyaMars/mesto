@@ -1,6 +1,6 @@
-.popup__field__about {
+.popup__field_name {
     padding: 0;
-    padding-top: 30px;
+    padding-top: 54px;
     min-height: 14px;
     font-family: 'Inter';
     font-style: normal;
@@ -14,10 +14,10 @@
 }
 
 @media screen and (max-width: 765px) {
-    .popup__field_about {
+    .popup__field_name {
         max-width: 238px;
         margin-left: 22px;
         margin-right: 22px;
-        padding-top: 30px;
+        padding-top: 75px;
     }
 }
