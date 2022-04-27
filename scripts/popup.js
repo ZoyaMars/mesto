@@ -1,3 +1,4 @@
+ // Кнопки стали работать
  const popupOpenBtn = document.querySelector(".profile__edit-button");
  const popup = document.querySelector(".popup");
  const popupCloseBtn = document.querySelector(".popup__button-close");
@@ -20,35 +21,43 @@
 
  function togglePopup() {
      popup.classList.toggle("popup_active");
-
  }
+
+
+
+
+
+
+
+
+
 
  const formElement = document.querySelector(".popup__form");
- const inputUserName = document.querySelector(".popup__field_name");
- const inputUserAbout = document.querySelector(".popup__field_about");
+ const inputUserName = document.querySelector(".popup__field-name");
+ const inputUserAbout = document.querySelector(".popup__field-about");
+ // const popupSaveBtn = document.querySelector(".popup__button-save");
 
- function fillEditProfileInputs() {
-     inputUserName.value = profileUserName.textContent;
-     inputUserAbout.value = profileUserAbout.textContent;
- }
+ let Name = document.querySelector(".profile__name");
+ let About = document.querySelector(".profile__description");
 
- function editFormSubmitHandler(evt) {
+
+ function formSubmitHandler(evt) {
      evt.preventDefault();
-     profileUserName.textContent = inputUserName.value;
-     profileUserAbout.textContent = inputUserAbout.value;
-     popupEditProfile.classList.remove("popup_active");
+     inputUserName.value;
+     inputUserAbout.value;
+
+     Name.textContent = inputUserName.value;
+     About.textContent = inputUserAbout.value;
  }
-
- const popupSaveBtn = document.querySelector(".popup__button-save");
-
- popupSaveBtn.addEventListener('click', function() {
-     togglePopup();
- });
 
  formElement.addEventListener('submit', formSubmitHandler);
 
 
+ let popupSaveBtn = document.querySelector(".popup__button-save")
+ popupSaveBtn.addEventListener('click', function() {
 
+     togglePopup();
+ });
 
 
  //  // Находим форму в DOM
