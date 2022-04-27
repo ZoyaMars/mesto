@@ -21,3 +21,11 @@
     font-display: swap;
     src: url("./Font_Inter/Inter-Black.woff2") format("woff2"), url("./Font_Inter/Inter-Black.woff") format("woff");
 }
+
+@font-face {
+    font-family: 'Inter';
+    font-style: medium;
+    font-weight: 500;
+    font-display: swap;
+    src: url('./Font_Inter/Inter-Medium.woff') format('woff2'), url('./Font_Inter/Inter-Medium.woff2') format('woff');
+}

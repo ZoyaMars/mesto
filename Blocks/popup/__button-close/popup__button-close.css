@@ -38,5 +38,6 @@
     .popup__button-close {
         right: 1px;
         top: 70px;
+        position: absolute;
     }
 }
