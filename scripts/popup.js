@@ -60,7 +60,7 @@
  });
 
 
- //  // Находим форму в DOM
+ //  Находим форму в DOM
  //  let formElement = // Воспользуйтесь методом querySelector() 
  //      // Находим поля формы в DOM
  //      let nameInput = // Воспользуйтесь инструментом .querySelector() 
