@@ -1,17 +1,11 @@
     .popup {
         /* display: none; */
+        display: flex;
         opacity: 0;
         z-index: -1;
         position: fixed;
         background-color: rgba(0, 0, 0, .7);
         transition: visibility 0.2s linear, opacity 0.2s linear;
-        /* display: flex;
-        visibility: hidden;
-        opacity: 0;
-        transition: visibility 0.2s linear, opacity 0.2s linear;
-        position: fixed;
-        align-items: center;
-        justify-content: center; */
         bottom: 0;
         left: 0;
         right: 0;
@@ -30,7 +24,12 @@
         .popup {
             padding: 123px 19px;
             width: 282px;
-            position: absolute;
             margin: 0;
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            margin: auto;
         }
     }
