@@ -11,4 +11,4 @@
 * JavaScript
 
 
-* [Ссылка на проект в GH Pages] (https://zoyamars.github.io/mesto/)
+* [Ссылка на проект в GH Pages](https://zoyamars.github.io/mesto/)
