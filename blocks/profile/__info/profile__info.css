@@ -1,0 +1,33 @@
+.profile__info {
+    padding-left: 30px;
+    width: 336px;
+    margin: 0;
+    padding-right: 244px;
+}
+
+
+/* @media screen and (max-width: 1276px) {
+    .profile__info {
+        max-width: 928px;
+    }
+} */
+
+@media screen and (max-width: 1019px) {
+    .profile__info {
+        /* max-width: 600px;
+        padding-right: 100px; */
+        text-align: center;
+        padding-right: 0px;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 765px) {
+    .profile__info {
+        width: 282px;
+        margin-left: 19px;
+        margin-right: 19px;
+        padding: 0;
+        padding-top: 26px;
+    }
+}
