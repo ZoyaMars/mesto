@@ -5,7 +5,6 @@
     margin: 0;
     padding: 0;
     margin-top: 48px;
-    margin-bottom: 37px;
     font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
@@ -26,12 +25,5 @@
 @media screen and (max-width: 765px) {
     .popup__button-save {
         width: 238px;
-        height: 46px;
-        font-size: 14px;
-        line-height: 17px;
-        padding-left: 22px;
-        padding-right: 22px;
-        margin-bottom: 25px;
-        margin-top: 45px;
     }
 }
