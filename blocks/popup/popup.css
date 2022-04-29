@@ -4,25 +4,18 @@
     justify-content: center;
     align-items: center;
     opacity: 0;
-    z-index: -1;
-    background-color: rgba(0, 0, 0, .7);
+    z-index: 2;
+    background-color: rgba(0, 0, 0, 0.5);
     transition: visibility 0.2s linear, opacity 0.2s linear;
     position: fixed;
     inset: 0;
 }
 
 
-/* @media screen and (max-width: 1019px) {
-        .popup {
-            padding: 195px 150px;
-        }
-    } */
-
-@media screen and (max-width: 765px) {
+/* @media screen and (max-width: 765px) {
     .popup {
-        /* padding: 123px 19px; */
-        max-width: 282px;
+       
         margin-left: 19px;
         margin-right: 19px;
     }
-}
+} */

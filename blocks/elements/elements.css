@@ -8,14 +8,6 @@
     max-width: 880px;
 }
 
-@media screen and (max-width: 1276px) {
-    .elements {}
-}
-
-@media screen and (max-width: 1019px) {
-    .elements {}
-}
-
 @media screen and (max-width: 765px) {
     .elements {
         padding-top: 36px;
