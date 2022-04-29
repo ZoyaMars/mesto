@@ -25,20 +25,13 @@
 
 
 
-
-
-
-
-
-
-
  const formElement = document.querySelector(".popup__form");
  const inputUserName = document.querySelector(".popup__field-name");
  const inputUserAbout = document.querySelector(".popup__field-about");
  // const popupSaveBtn = document.querySelector(".popup__button-save");
 
- let Name = document.querySelector(".profile__name");
- let About = document.querySelector(".profile__description");
+ let name = document.querySelector(".profile__name");
+ let about = document.querySelector(".profile__description");
 
 
  function formSubmitHandler(evt) {
@@ -46,18 +39,16 @@
      inputUserName.value;
      inputUserAbout.value;
 
-     Name.textContent = inputUserName.value;
-     About.textContent = inputUserAbout.value;
+     name.textContent = inputUserName.value;
+     about.textContent = inputUserAbout.value;
+     togglePopup();
+
  }
 
  formElement.addEventListener('submit', formSubmitHandler);
 
 
- let popupSaveBtn = document.querySelector(".popup__button-save")
- popupSaveBtn.addEventListener('click', function() {
 
-     togglePopup();
- });
 
 
  //  Находим форму в DOM

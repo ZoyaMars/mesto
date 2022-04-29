@@ -3,6 +3,8 @@
 @media screen and (max-width: 1276px) {
     .content {
         max-width: 928px;
+        justify-content: center;
+        align-items: center;
     }
 }
 
