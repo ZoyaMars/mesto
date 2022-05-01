@@ -4,25 +4,14 @@
  const popupCloseBtn = document.querySelector(".popup__button-close");
 
  popupOpenBtn.addEventListener("click", function(event) {
-     event.preventDefault();
-     togglePopup();
+     popup.classList.add("popup_active")
+
  });
 
  popupCloseBtn.addEventListener("click", function(event) {
-     togglePopup();
+     popup.classList.remove("popup_active")
+
  });
-
- popup.addEventListener("click", function(event) {
-     if (event.target == event.currentTarget) {
-         togglePopup();
-
-     }
- });
-
- function togglePopup() {
-     popup.classList.toggle("popup_active");
- }
-
 
 
  const formElement = document.querySelector(".popup__form");
@@ -33,15 +22,11 @@
  let name = document.querySelector(".profile__name");
  let about = document.querySelector(".profile__description");
 
-
  function formSubmitHandler(evt) {
      evt.preventDefault();
-     inputUserName.value;
-     inputUserAbout.value;
-
      name.textContent = inputUserName.value;
      about.textContent = inputUserAbout.value;
-     togglePopup();
+     popup.classList.remove("popup_active")
 
  }
 

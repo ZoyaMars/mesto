@@ -13,5 +13,9 @@
     .header {
         max-width: 320px;
         padding: 0;
+        display: flex;
+        justify-items: flex-start;
+        align-items: flex-start;
+        width: 100%;
     }
 }
