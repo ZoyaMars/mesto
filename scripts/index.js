@@ -15,8 +15,8 @@
 
 
  const formElement = document.querySelector(".popup__form");
- const inputUserName = document.querySelector(".popup__field-name");
- const inputUserAbout = document.querySelector(".popup__field-about");
+ const inputUserName = document.querySelector(".popup__name");
+ const inputUserAbout = document.querySelector(".popup__about");
  // const popupSaveBtn = document.querySelector(".popup__button-save");
 
  let name = document.querySelector(".profile__name");

@@ -1,4 +1,5 @@
-.popup__field-name {
+.popup__field {
+    max-width: 358px;
     padding: 0;
     padding-top: 54px;
     min-height: 14px;
@@ -10,17 +11,16 @@
     color: #000000;
     padding-bottom: 13px;
     border: none;
-    border-bottom: 1px solid rgba(0, 0, 0, 1);
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+}
+
+.popup__field:last-of-type {
+    padding-top: 30px;
 }
 
 @media screen and (max-width: 765px) {
-    .popup__field_name {
+    .popup__field {
         max-width: 238px;
-        padding-left: 22px;
-        padding-right: 22px;
         padding-top: 75px;
     }
 }
