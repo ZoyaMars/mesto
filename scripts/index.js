@@ -2,39 +2,36 @@
  const popupOpenBtn = document.querySelector(".profile__edit-button");
  const popup = document.querySelector(".popup");
  const popupCloseBtn = document.querySelector(".popup__button-close");
-
- popupOpenBtn.addEventListener("click", function(event) {
-     popup.classList.add("popup_active")
-
- });
-
- popupCloseBtn.addEventListener("click", function(event) {
-     popup.classList.remove("popup_active")
-
- });
-
-
  const formElement = document.querySelector(".popup__form");
- const inputUserName = document.querySelector(".popup__name");
- const inputUserAbout = document.querySelector(".popup__about");
+ const inputName = document.querySelector(".popup__name");
+ const inputAbout = document.querySelector(".popup__about");
  // const popupSaveBtn = document.querySelector(".popup__button-save");
-
  let name = document.querySelector(".profile__name");
  let about = document.querySelector(".profile__description");
 
+
+ popupOpenBtn.addEventListener("click", openPopup);
+
+ function openPopup() {
+     popup.classList.add("popup_active")
+     inputName.value = name.textContent;
+     inputAbout.value = about.textContent;
+ };
+
+ popupCloseBtn.addEventListener("click", closePopup);
+
+ function closePopup() {
+     popup.classList.remove("popup_active")
+ };
+
  function formSubmitHandler(evt) {
      evt.preventDefault();
-     name.textContent = inputUserName.value;
-     about.textContent = inputUserAbout.value;
-     popup.classList.remove("popup_active")
-
+     name.textContent = inputName.value;
+     about.textContent = inputAbout.value;
+     closePopup();
  }
 
  formElement.addEventListener('submit', formSubmitHandler);
-
-
-
-
 
  //  Находим форму в DOM
  //  let formElement = // Воспользуйтесь методом querySelector() 
