@@ -1,25 +1,11 @@
-.content {}
-
-@media screen and (max-width: 1276px) {
-    .content {
-        max-width: 928px;
-        /* display: flex;
-        justify-content: center;
-        align-items: center; */
-    }
-}
-
-@media screen and (max-width: 1019px) {
-    .content {
-        max-width: 600px;
-    }
+.content {
+    display: block;
 }
 
 @media screen and (max-width: 765px) {
-    .content {
+    .profile {
+        padding-left: 19px;
+        padding-right: 19px;
         margin: 0 auto;
-        max-width: 320px;
-        /* padding-left: 19px;
-        padding-right: 19px; */
     }
 }

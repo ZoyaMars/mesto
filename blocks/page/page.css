@@ -3,42 +3,9 @@
     background-color: #000000;
     color: white;
     text-rendering: optimizeLegibility;
-    min-width: 320px;
+    /* min-width: 320px;
     max-width: 1280px;
-    min-height: 100vh;
-    display: flex;
-    flex-direction: column;
-    margin: 45px 200px 60px 200px;
-}
-
-@media screen and (max-width: 1276px) {
-    .page {
-        max-width: 1024px;
-        padding: 0;
-        margin: 45px 100px 60px 100px;
-    }
-}
-
-@media screen and (max-width: 1019px) {
-    .page {
-        max-width: 768px;
-        margin-bottom: 0;
-        display: flex;
-        flex-wrap: wrap;
-        margin: 45px 100px 60px 100px;
-    }
-}
-
-@media screen and (max-width: 765px) {
-    .page {
-        /* max-width: 320px; */
-        padding: 0;
-        margin: 0;
-        margin-top: 28px;
-        margin-bottom: 36px;
-        width: calc(100% - 2 * 19px);
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
+    min-height: 100vh; */
+    /* display: flex;
+    flex-direction: column; */
 }

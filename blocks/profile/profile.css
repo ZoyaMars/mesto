@@ -3,28 +3,16 @@
     box-sizing: border-box;
     padding-top: 40px;
     max-width: 880px;
-    justify-content: center;
-    align-items: center;
+    justify-content: space-between;
+    /* align-items: center; */
+    margin: 0 auto;
 }
 
-
-/* 
-@media screen and (max-width: 1276px) {
-    .profile {
-        max-width: 928px;
-    }
-}
-
-@media screen and (max-width: 1019px) {
-    .profile {
-        max-width: 88%;
-    }
-} */
-
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 877px) {
     .profile {
         max-width: 282px;
         padding-top: 42px;
         flex-direction: column;
+        align-items: center;
     }
 }
