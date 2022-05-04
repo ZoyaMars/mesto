@@ -9,7 +9,7 @@
     white-space: nowrap;
     margin: 0;
     /* padding-right: 18px; */
-    max-width: 100%;
+    max-width: 294px;
 }
 
 @media screen and (max-width: 878px) {
@@ -20,5 +20,6 @@
         color: #FFFFFF;
         padding: 0;
         margin-left: 46px;
+        max-width: 189px;
     }
 }
