@@ -3,19 +3,18 @@
     padding-top: 66px;
     padding-bottom: 60px;
     margin: 0 auto;
-    width: 100%;
+    /* width: 100%; */
+    display: flex;
+    justify-content: flex-start;
 }
 
-@media screen and (max-width: 765px) {
+@media screen and (max-width: 878px) {
     .footer {
         padding-top: 48px;
-        width: 100%;
-        display: flex;
-        justify-items: flex-start;
-        align-items: flex-start;
-        margin: 0 auto;
-        padding-left: 19px;
-        padding-right: 19px;
         padding-bottom: 36px;
+        justify-content: flex-start;
+        /* padding-left: 19px;
+        padding-right: 19px; */
+        margin: 0 19px;
     }
 }
