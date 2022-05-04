@@ -4,18 +4,12 @@
     font-size: 42px;
     line-height: 48px;
     color: #FFFFFF;
-    padding-bottom: 16px;
-    margin: 0;
-    padding-right: 18px;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-}
-
-@media screen and (max-width: 1019px) {
-    .profile__name {
-        font-size: 34px;
-    }
+    margin: 0;
+    /* padding-right: 18px; */
+    max-width: 90%;
 }
 
 @media screen and (max-width: 765px) {
