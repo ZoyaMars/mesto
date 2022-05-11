@@ -2,7 +2,6 @@
  // Кнопки стали работать
  const popupOpenBtn = document.querySelector(".profile__edit-button");
  const popup = document.querySelector(".popup");
- const popupCloseBtnProfile = document.querySelector(".popup__button-close");
  const formElement = document.querySelector(".popup__form");
  const inputName = document.querySelector("#name");
  const inputAbout = document.querySelector("#about");
@@ -10,9 +9,13 @@
  const about = document.querySelector(".profile__description");
  //Спринт5
  const popupOpenBtnAdd = document.querySelector(".profile__add-button");
+ //Попапы
  const popupEditProfile = document.querySelector(".popup__edit-profile");
  const popupAddCard = document.querySelector(".popup__add-card");
- const popupCloseBtnAddCard = document.querySelector(".popup__button-close");
+ //Кнопки закрытия
+ const popupCloseBtnProfile = popupEditProfile.querySelector(".popup__button-close");
+ const popupCloseBtnAddCard = popupAddCard.querySelector(".popup__button-close");
+
 
  //  Открытие попапов
  const openPopup = popup => {
@@ -43,7 +46,7 @@
  });
 
  // Закрывает попап добавления картинки
- popupCloseBtnAddCard.addEventListener('click', () => {
+ popupCloseBtnAddCard.addEventListener("click", () => {
      closePopup(popupAddCard);
  });
 
