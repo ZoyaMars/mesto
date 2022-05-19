@@ -32,57 +32,9 @@
         </section>
 
         <section class="elements">
-
-            <div class="elements__card">
-                <img class="elements__photo" src="images/kirill-pershin-1.jpg" alt="Карачаевск">
-                <div class="elements__section">
-                    <h2 class="elements__name">Карачаевск</h2>
-                    <button type="button" class="elements__like"> </button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img class="elements__photo" src="images/kirill-pershin-4.png" alt="Гора Эльбрус">
-                <div class="elements__section">
-                    <h2 class="elements__name">Гора Эльбрус</h2>
-                    <button type="button" class="elements__like"> </button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img class="elements__photo" src="images/kirill-pershin-3.png" alt="Домбай">
-                <div class="elements__section">
-                    <h2 class="elements__name">Домбай</h2>
-                    <button type="button" class="elements__like"> </button>
-                </div>
-
-            </div>
-
-            <div class="elements__card">
-                <img class="elements__photo" src="images/kirill-pershin-4.png" alt="Гора Эльбрус">
-                <div class="elements__section">
-                    <h2 class="elements__name">Гора Эльбрус</h2>
-                    <button type="button" class="elements__like"> </button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img class="elements__photo" src="images/kirill-pershin-3.png" alt="Домбай">
-                <div class="elements__section">
-                    <h2 class="elements__name">Домбай</h2>
-                    <button type="button" class="elements__like"> </button>
-                </div>
-            </div>
-
-            <div class="elements__card">
-                <img class="elements__photo" src="images/kirill-pershin-1.jpg" alt="Карачаевск">
-                <div class="elements__section">
-                    <h2 class="elements__name">Карачаево-Черкессия</h2>
-                    <button type="button" class="elements__like"> </button>
-                </div>
-            </div>
+            <ul class="elements__table">
+            </ul>
         </section>
-
 
     </main>
 
@@ -118,6 +70,19 @@
         </div>
 
     </div>
+
+    <template id="cards">
+    <li class="card">
+
+        <!-- <button class="button__card" type="button"> -->
+          <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.png" alt="">
+        <button type="button" class="card__button_remove"></button>
+        <div class="card__section">
+            <h2 class="card__name"></h2>
+            <button type="button" class="button__like"></button>
+        </div>
+    </li>
+    </template>
 
     <script src="./scripts/index.js"></script>
 
