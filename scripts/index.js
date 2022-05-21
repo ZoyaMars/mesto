@@ -7,15 +7,18 @@
  const inputAbout = document.querySelector("#about");
  const name = document.querySelector(".profile__name");
  const about = document.querySelector(".profile__description");
+
  //Спринт5
  const popupOpenBtnAdd = document.querySelector(".profile__add-button");
  //Попапы
  const popupEditProfile = document.querySelector(".popup__edit-profile");
  const popupAddCard = document.querySelector(".popup__add-card");
+ const popupBigImage = document.querySelector('.popup__big_image');
+
  //Кнопки закрытия
  const popupCloseBtnProfile = popupEditProfile.querySelector(".popup__button-close");
  const popupCloseBtnAddCard = popupAddCard.querySelector(".popup__button-close");
-
+ const popupCloseBtnBigImage = popupBigImage.querySelector('.popup__button-close');
 
  //  Открытие попапов
  const openPopup = popup => {
@@ -71,6 +74,20 @@
      evt.target.closest('.card').remove();
  }
 
+ //Открывает картинки полностью
+ const openPopupBigImage = event => {
+     const image = popupBigImage.querySelector('.popup__image');
+     image.src = event.target.closest('.card__image').src;
+     image.alt = event.target.closest('.card__image').alt;
+     popupBigImage.querySelector('.popup__text').textContent = event.target.closest('.card__image').alt;
+
+     openPopup(popupBigImage);
+ };
+
+ // Закрывает картинки
+ popupCloseBtnBigImage.addEventListener("click", () => {
+     closePopup(popupBigImage);
+ });
 
  //  Массив из первого пункта 
  const initialCards = [{
@@ -105,7 +122,7 @@
 
  function createCard(item) {
      const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
-     console.dir(cards)
+     //console.dir(cards)
      const cardImage = cardElement.querySelector('.card__image');
      const cardName = cardElement.querySelector('.card__name');
 
@@ -113,11 +130,14 @@
      cardImage.alt = item.name;
      cardName.textContent = item.name;
 
-     //лайк в карточке
+     //Лайк в карточке
      cardElement.querySelector('.button__like').addEventListener('click', btnLike);
 
-     //Удаление картинки
+     //Удаляет картинки 
      cardElement.querySelector('.card__button_remove').addEventListener('click', removeImage);
+
+     //Открывает картинки полностью
+     cardElement.querySelector('.button__card').addEventListener('click', openPopupBigImage);
 
      return cardElement;
  };
@@ -126,9 +146,9 @@
  //Добавление карточки в контейнер
  const addCardToArray = (wrap, name, link) => {
      wrap.append(createCard({ name, link }));
- }
+ };
 
  //Добавляет все карточки из массива
  initialCards.forEach((item) => {
      addCardToArray(newCard, item.name, item.link);
- })
+ });

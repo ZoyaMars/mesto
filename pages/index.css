@@ -39,3 +39,7 @@
 @import url(../blocks/card/__like/button__like_active.css);
 @import url(../blocks/card/__name/card__name.css);
 @import url(../blocks/card/__section/card__section.css);
+@import url(../blocks/button/button__card.css);
+@import url(../blocks/popup/__big_image_section/popup__big_image_section.css);
+@import url(../blocks/popup/__image/popup__image.css);
+@import url(../blocks/popup/__text/popup__text.css);
