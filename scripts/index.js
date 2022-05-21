@@ -2,7 +2,7 @@
  // Кнопки стали работать
  const popupOpenBtn = document.querySelector(".profile__edit-button");
  const popup = document.querySelector(".popup");
- const formElement = document.querySelector(".popup__form");
+ const formElement = document.querySelector("form[name=profileData");
  const inputName = document.querySelector("#name");
  const inputAbout = document.querySelector("#about");
  const name = document.querySelector(".profile__name");
@@ -19,6 +19,7 @@
  const popupCloseBtnProfile = popupEditProfile.querySelector(".popup__button-close");
  const popupCloseBtnAddCard = popupAddCard.querySelector(".popup__button-close");
  const popupCloseBtnBigImage = popupBigImage.querySelector('.popup__button-close');
+
 
  //  Открытие попапов
  const openPopup = popup => {
@@ -152,3 +153,23 @@
  initialCards.forEach((item) => {
      addCardToArray(newCard, item.name, item.link);
  });
+
+
+ //Добавление картинок
+ const formAddImage = document.querySelector('form[name=card');
+ const InputPlace = document.querySelector("#cardname");
+ const InputLink = document.querySelector("#cardlink");
+
+ const firstСard = (wrap, name, link) => {
+     wrap.prepend(createCard({ name, link }));
+ }
+
+ const addCard = evt => {
+     evt.preventDefault();
+     firstСard(newCard, InputPlace.value, InputLink.value);
+     formAddImage.reset();
+     closePopup(popupAddCard);
+ }
+
+ //Добавляет картинку
+ formAddImage.addEventListener('submit', addCard);
