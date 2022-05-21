@@ -11,9 +11,9 @@
  //Спринт5
  const popupOpenBtnAdd = document.querySelector(".profile__add-button");
  //Попапы
- const popupEditProfile = document.querySelector(".popup__edit-profile");
- const popupAddCard = document.querySelector(".popup__add-card");
- const popupBigImage = document.querySelector('.popup__big_image');
+ const popupEditProfile = document.querySelector(".popup_edit-profile");
+ const popupAddCard = document.querySelector(".popup_add-card");
+ const popupBigImage = document.querySelector('.popup_big_image');
 
  //Кнопки закрытия
  const popupCloseBtnProfile = popupEditProfile.querySelector(".popup__button-close");
