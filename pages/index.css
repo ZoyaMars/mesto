@@ -40,6 +40,6 @@
 @import url(../blocks/card/__name/card__name.css);
 @import url(../blocks/card/__section/card__section.css);
 @import url(../blocks/button/button__card.css);
-@import url(../blocks/popup/_big-image-section/popup_big-image-section.css);
+@import url(../blocks/popup/_bigimage-section/popup_bigimage-section.css);
 @import url(../blocks/popup/__image/popup__image.css);
 @import url(../blocks/popup/__text/popup__text.css);
