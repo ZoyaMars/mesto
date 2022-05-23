@@ -3,6 +3,7 @@
     margin: 0;
     display: flex;
     flex-wrap: wrap;
+    margin-bottom: 16px;
 }
 
 @media screen and (max-width: 878px) {
@@ -11,6 +12,7 @@
         /* margin-left: 19px;
         margin-right: 19px; */
         padding: 0;
-        padding-top: 26px;
+        padding-top: 22.25px;
+        margin: 0;
     }
 }
