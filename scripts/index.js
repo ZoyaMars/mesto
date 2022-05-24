@@ -26,8 +26,8 @@
 
  //Добавление картинок
  const formAddImage = document.querySelector('form[name=card');
- const InputPlace = document.querySelector("#cardname");
- const InputLink = document.querySelector("#cardlink");
+ const inputPlace = document.querySelector("#cardname");
+ const inputLink = document.querySelector("#cardlink");
 
  //  Открытие попапов
  const openPopup = popup => {
@@ -85,8 +85,6 @@
 
  //Открывает картинки полностью
  const openPopupBigImage = event => {
-     const cardElement = cardTemplate.querySelector('.card').cloneNode(true);
-
      image.src = event.target.closest('.card__image').src;
      image.alt = event.target.closest('.card__image').alt;
      popupBigImage.querySelector('.popup__text').textContent = event.target.closest('.card__image').alt;
@@ -168,7 +166,7 @@
 
  const addCard = evt => {
      evt.preventDefault();
-     addFirstСard(newCard, InputPlace.value, InputLink.value);
+     addFirstСard(newCard, inputPlace.value, inputLink.value);
      closePopup(popupAddCard);
      formAddImage.reset();
  }
