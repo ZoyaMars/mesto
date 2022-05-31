@@ -29,6 +29,10 @@
  const inputPlace = document.querySelector("#cardname");
  const inputLink = document.querySelector("#cardlink");
 
+ //Спринт 6
+ const popupList = Array.from(document.querySelectorAll('.popup'));
+
+
  //  Открытие попапов
  const openPopup = popup => {
      popup.classList.add('popup_active');
@@ -61,6 +65,8 @@
  popupAddCardCloseBtn.addEventListener("click", () => {
      closePopup(popupAddCard);
  });
+
+
 
  //  Заполнение попапа профайла
  function formSubmitHandler(evt) {
@@ -173,3 +179,30 @@
 
  //Добавляет картинку
  formAddImage.addEventListener('submit', addCard);
+
+ //Спринт 6
+ //Закрывает попап кликом где угодно
+ const closePopupOverlay = () => {
+     popupList.forEach(popupElement => {
+         popupElement.addEventListener('mousedown', event => {
+             if (
+                 event.target.classList.contains('popup') ||
+                 event.target.closest('.popup__button-close')
+             ) {
+                 closePopup(popupElement);
+             }
+         });
+     });
+ }
+
+
+ //Вызов функции закрытия попапа 
+ closePopupOverlay();
+
+ //Закрывает попапы кнопкой esc 
+ const closePopupEsc = event => {
+     const popupactive = document.querySelector('.popup_active');
+     if (event.key === "Escape") {
+         closePopup(popupactive);
+     }
+ }
