@@ -36,6 +36,8 @@
  //  Открытие попапов
  const openPopup = popup => {
      popup.classList.add('popup_active');
+     document.addEventListener('keydown', closePopupEsc);
+
  }
 
  //Открывает попап профайла
@@ -54,6 +56,8 @@
  // Закрытие попапов
  const closePopup = popup => {
      popup.classList.remove('popup_active');
+     document.removeEventListener('keydown', closePopupEsc);
+
  };
 
  // Закрывает попап профиля
@@ -182,7 +186,7 @@
 
  //Спринт 6
  //Закрывает попап кликом где угодно
- const closePopupOverlay = () => {
+ const closePopupAnywhere = () => {
      popupList.forEach(popupElement => {
          popupElement.addEventListener('mousedown', event => {
              if (
@@ -197,7 +201,7 @@
 
 
  //Вызов функции закрытия попапа 
- closePopupOverlay();
+ closePopupAnywhere();
 
  //Закрывает попапы кнопкой esc 
  const closePopupEsc = event => {
@@ -205,4 +209,4 @@
      if (event.key === "Escape") {
          closePopup(popupactive);
      }
- }
+ };
