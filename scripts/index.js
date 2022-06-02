@@ -33,6 +33,7 @@
  const popupList = Array.from(document.querySelectorAll('.popup'));
 
 
+
  //  Открытие попапов
  const openPopup = popup => {
      popup.classList.add('popup_active');
@@ -179,7 +180,9 @@
      addFirstСard(newCard, inputPlace.value, inputLink.value);
      closePopup(popupAddCard);
      formAddImage.reset();
- }
+ };
+
+
 
  //Добавляет картинку
  formAddImage.addEventListener('submit', addCard);
