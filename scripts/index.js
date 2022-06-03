@@ -31,7 +31,7 @@
 
  //Спринт 6
  const popupList = Array.from(document.querySelectorAll('.popup'));
- const btnSaveAddImage = document.querySelector('.popup__button-save');
+ const btnSaveAddImage = document.querySelector('.button__add');
  const btnSaveEditProfile = document.querySelector('.popup__button-save');
 
 
@@ -208,8 +208,6 @@
      formAddImage.reset();
      inactiveSubmitButton(btnSaveAddImage); //функция в validation
      openPopup(popupAddCard);
-
-
  });
 
 
