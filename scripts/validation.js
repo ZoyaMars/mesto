@@ -62,14 +62,15 @@ const toggleButtonState = (inputList, buttonElement, inactiveButtonClass) => {
 //Кнопка отправки формы стала не активной 
 const inactiveSubmitButton = (buttonSave) => {
     buttonSave.disabled = true;
-    buttonSave.classList.add(inactiveButtonClass);
-}
+    buttonSave.classList.add('popup__button_disabled');
+};
+
 
 //Кнопка отправки формы стала активной 
 const activeSubmitButton = (buttonSave) => {
     buttonSave.disabled = false;
-    buttonSave.classList.remove(inactiveButtonClass);
-}
+    buttonSave.classList.remove('popup__button_disabled');
+};
 
 //Добавляем события для всех форм 
 const setEventListener = (formElement, valid) => {
@@ -107,34 +108,3 @@ const enableValidation = (validElements) => {
 
 //Вызывает функцию enableValidation
 enableValidation(validElements);
-
-
-
-
-// // лайвкодинг
-// const addPlaceForm = document.forms['card'];
-// const editProfileForm = document.forms['profileData'];
-
-// function enableValidation(form) {
-//     const inputs = Array.from(form.querySelectorAll('.popup__field'))
-
-//     inputs.forEach(input => {
-//         input.addEventListener('input', () => setInputValidity(input));
-//     })
-// };
-
-// function setInputValidity(input) {
-//     const fieldset = input.closest('.popup__form_fieldset');
-//     const errorBlock = fieldset.querySelector('.popup__input-error');
-
-//     console.log(input.validity)
-
-//     if (!input.validity.valid) {
-//         errorBlock.textContent = 'нет';
-//         errorBlock.classList.add('.popup__error_visible');
-//     }
-
-// }
-
-// enableValidation(addPlaceForm);
-// enableValidation(editProfileForm);

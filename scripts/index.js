@@ -16,7 +16,7 @@
  //Кнопки закрытия
  const popupEditProfileCloseBtn = popupEditProfile.querySelector(".popup__button-close");
  const popupAddCardCloseBtn = popupAddCard.querySelector(".popup__button-close");
- const popupCpopupBigImageCloseBtn = popupBigImage.querySelector('.popup__button-close');
+ const popupBigImageCloseBtn = popupBigImage.querySelector('.popup__button-close');
 
  //Постоянные из функций
  const image = popupBigImage.querySelector('.popup__image');
@@ -31,28 +31,15 @@
 
  //Спринт 6
  const popupList = Array.from(document.querySelectorAll('.popup'));
-
+ const btnSaveAddImage = document.querySelector('.popup__button-save');
+ const btnSaveEditProfile = document.querySelector('.popup__button-save');
 
 
  //  Открытие попапов
  const openPopup = popup => {
      popup.classList.add('popup_active');
      document.addEventListener('keydown', closePopupEsc);
-
- }
-
- //Открывает попап профайла
- popupEditProfileOpenBtn.addEventListener("click", () => {
-     inputName.value = name.textContent;
-     inputAbout.value = about.textContent;
-     openPopup(popupEditProfile);
- });
-
- //Открывает попап добавления картинки
- popupAddCardOpenBtn.addEventListener("click", () => {
-     openPopup(popupAddCard);
-
- });
+ };
 
  // Закрытие попапов
  const closePopup = popup => {
@@ -81,18 +68,16 @@
      closePopup(popupEditProfile);
  };
 
- //  Меняем инфу профайла
- formEditProfile.addEventListener('submit', formSubmitHandler);
 
  //  Лайк
  const btnLike = event => {
      event.target.classList.toggle('button__like_active');
- }
+ };
 
  //Удаление карточки
  const removeImage = evt => {
      evt.target.closest('.card').remove();
- }
+ };
 
  //Открывает картинки полностью
  const openPopupBigImage = event => {
@@ -104,7 +89,7 @@
  };
 
  // Закрывает картинки
- popupCpopupBigImageCloseBtn.addEventListener("click", () => {
+ popupBigImageCloseBtn.addEventListener("click", () => {
      closePopup(popupBigImage);
  });
 
@@ -173,7 +158,7 @@
  //Добавление картинок
  const addFirstСard = (wrap, name, link) => {
      wrap.prepend(createCard({ name, link }));
- }
+ };
 
  const addCard = evt => {
      evt.preventDefault();
@@ -182,10 +167,6 @@
      formAddImage.reset();
  };
 
-
-
- //Добавляет картинку
- formAddImage.addEventListener('submit', addCard);
 
  //Спринт 6
  //Закрывает попап кликом где угодно
@@ -213,3 +194,26 @@
          closePopup(popupactive);
      }
  };
+
+ //Открывает попап профайла
+ popupEditProfileOpenBtn.addEventListener("click", () => {
+     inputName.value = name.textContent;
+     inputAbout.value = about.textContent;
+     inactiveSubmitButton(btnSaveEditProfile); //функция в validation
+     openPopup(popupEditProfile);
+ });
+
+ //Открывает попап добавления картинки
+ popupAddCardOpenBtn.addEventListener("click", () => {
+     formAddImage.reset();
+     inactiveSubmitButton(btnSaveAddImage); //функция в validation
+     openPopup(popupAddCard);
+
+
+ });
+
+
+ //  Меняем инфу профайла
+ formEditProfile.addEventListener('submit', formSubmitHandler);
+ //Добавляет картинку
+ formAddImage.addEventListener('submit', addCard);
