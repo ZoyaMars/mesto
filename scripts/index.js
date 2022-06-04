@@ -31,7 +31,7 @@
 
  //Спринт 6
  const popupList = Array.from(document.querySelectorAll('.popup'));
- const btnSaveAddImage = document.querySelector('.button__add');
+ const btnSaveAddImage = document.querySelector('.popup__button-add');
  const btnSaveEditProfile = document.querySelector('.popup__button-save');
 
 
@@ -206,12 +206,16 @@
  //Открывает попап добавления картинки
  popupAddCardOpenBtn.addEventListener("click", () => {
      formAddImage.reset();
+
      inactiveSubmitButton(btnSaveAddImage); //функция в validation
+
      openPopup(popupAddCard);
+
  });
 
 
  //  Меняем инфу профайла
  formEditProfile.addEventListener('submit', formSubmitHandler);
+
  //Добавляет картинку
  formAddImage.addEventListener('submit', addCard);
