@@ -12,14 +12,14 @@ const popupText = popupImageZoom.querySelector('.popup__text');
 const popupEditProfileOpenBtn = document.querySelector('.profile__edit-button');
 const popupAddCardOpenBtn = document.querySelector('.profile__add-button');
 //Формы
-const nameInput = document.querySelector('.form__input_type_name');
-const jobInput = document.querySelector('.form__input_type_job');
+const nameInput = document.querySelector('.popup__field-name');
+const jobInput = document.querySelector('.popup__field-job');
 const profileName = document.querySelector('.profile__name');
 const profileJob = document.querySelector('.profile__description');
 const formProfileEdit = document.querySelector('form[name=profileData');
 const formAddImage = document.querySelector('.form[name=add-image');
-const placeInput = document.querySelector('.form__input_type_place');
-const linkInput = document.querySelector('.form__input_type_link');
+const placeInput = document.querySelector('.popup__field-place');
+const linkInput = document.querySelector('.popup__field-link');
 
 //template
 const newCard = document.querySelector('.elements__table');
