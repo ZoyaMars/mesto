@@ -50,11 +50,13 @@ export default class FormValidator {
     // Настройка кнопки submit 
     _toggleButtonState() {
         if (this._hasInvalidInput(this._inputList)) {
-            this._buttonSubmit.classList.add(this._inactiveButtonClass);
-            this._buttonSubmit.disabled = true;
+            //this._buttonSubmit.classList.add(this._inactiveButtonClass);
+            //this._buttonSubmit.disabled = true;
+            this.disableSubmitButton()
         } else {
-            this._buttonSubmit.classList.remove(this._inactiveButtonClass);
-            this._buttonSubmit.disabled = false;
+            //this._buttonSubmit.classList.remove(this._inactiveButtonClass);
+            //this._buttonSubmit.disabled = false;
+            this.activateSubmitButton()
         }
     };
 
@@ -73,19 +75,19 @@ export default class FormValidator {
     };
 
     //Кнопка отправки формы стала активной 
-    activeSubmitButton() {
+    activateSubmitButton() {
         this._buttonSubmit.disabled = false;
         this._buttonSubmit.classList.remove(this._inactiveButtonClass);
     };
 
     //Кнопка отправки формы стала не активной 
-    inactiveSubmitButton() {
+    disableSubmitButton() {
         this._buttonSubmit.disabled = true;
         this._buttonSubmit.classList.add(this._inactiveButtonClass);
     };
 
     //Убирает ошибку инпутов
-    deleteInputError() {
+    resetValidation() {
         this._inputList.forEach(inputElement => {
             this._hideInputError(inputElement);
         })

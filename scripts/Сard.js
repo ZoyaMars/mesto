@@ -1,14 +1,14 @@
 export default class Card {
-    constructor(name, link, cardSelector, openPopupImage) {
+    constructor(name, link, cardSwitch, openPopupImage) {
         this._name = name;
         this._link = link;
-        this.__cardSelector = cardSelector;
+        this._cardSelector = cardSwitch; //switch
         this._openPopupImage = openPopupImage;
     }
 
     // Создание template
     _getTemplate() {
-        const cardTemplate = this.__cardSelector.cloneNode(true)
+        const cardTemplate = this._cardSelector.cloneNode(true)
         return cardTemplate;
     }
 
