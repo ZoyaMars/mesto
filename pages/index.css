@@ -15,13 +15,6 @@
 @import url(../blocks/profile/__avatar/profile__avatar.css);
 @import url(../blocks/elements/elements.css);
 @import url(../blocks/elements/__table/elements__table.css);
-
-/* @import url(../blocks/elements/__like/elements__like.css);
-@import url(../blocks/elements/__like/elements__like_active.css);
-@import url(../blocks/elements/__name/elements__name.css);
-@import url(../blocks/elements/__photo/elements__photo.css);
-@import url(../blocks/elements/__section/elements__section.css); */
-
 @import url(../blocks/footer/footer.css);
 @import url(../blocks/footer/__copyrights/footer__copyrights.css);
 @import url(../blocks/popup/popup.css);

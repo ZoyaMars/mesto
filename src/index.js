@@ -1,5 +1,8 @@
-import Card from "./Сard.js";
-import FormValidator from "./FormValidator.js";
+import Card from "../scripts/Сard";
+import FormValidator from "../scripts/FormValidator";
+import '../pages/index.css';
+import whale from '../images/thomas-lipke-kkXDhAUnxYI-unsplash.jpg';
+
 
 // Попапы
 const popupList = Array.from(document.querySelectorAll('.popup'));
@@ -33,7 +36,7 @@ const initialCards = [{
     },
     {
         name: "Кострома",
-        link: "./images/alexandra-tran-ytgQImo6ugg-unsplash.jpg"
+        link: "../images/alexandra-tran-ytgQImo6ugg-unsplash.jpg"
     },
     {
         name: "Иваново",
@@ -41,11 +44,11 @@ const initialCards = [{
     },
     {
         name: "Медузы",
-        link: "./images/joel-filipe-_AjqGGafofE-unsplash.jpg"
+        link: "../images/joel-filipe-_AjqGGafofE-unsplash.jpg"
     },
     {
         name: "Кит",
-        link: './images/thomas-lipke-kkXDhAUnxYI-unsplash.jpg'
+        link: whale
     },
     {
         name: "Байкал",
