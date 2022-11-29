@@ -1,7 +1,14 @@
-import Card from "../scripts/Сard";
-import FormValidator from "../scripts/FormValidator";
+import Section from "../components/Section.js";
+import Card from "../components/Сard.js";
+import FormValidator from "../components/FormValidator.js";
+
+import PopupWithForm from "../components/PopupWithForm.js";
+import UserInfo from "../components/UserInfo.js";
+
 import '../pages/index.css';
 import whale from '../images/thomas-lipke-kkXDhAUnxYI-unsplash.jpg';
+import kostroma from '../images/alexandra-tran-ytgQImo6ugg-unsplash.jpg';
+import jellyfish from "../images/joel-filipe-_AjqGGafofE-unsplash.jpg";
 
 
 // Попапы
@@ -36,7 +43,7 @@ const initialCards = [{
     },
     {
         name: "Кострома",
-        link: "../images/alexandra-tran-ytgQImo6ugg-unsplash.jpg"
+        link: kostroma
     },
     {
         name: "Иваново",
@@ -44,7 +51,7 @@ const initialCards = [{
     },
     {
         name: "Медузы",
-        link: "../images/joel-filipe-_AjqGGafofE-unsplash.jpg"
+        link: jellyfish
     },
     {
         name: "Кит",

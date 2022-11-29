@@ -10,7 +10,8 @@
 <body class="page">
 
     <header class="header">
-        <img class="header__logo" src="images/logo.svg" alt="Лого Место">
+        <img class="header__logo" src="<%=require('./images/logo.svg')%>" alt="Лого Место">
+
     </header>
 
     <main class="content">
@@ -19,7 +20,7 @@
 
             <div class="profile__container">
 
-                <img class="profile__avatar" src="images/image.jpg" alt="Фото Кусто">
+                <img class="profile__avatar" src="<%=require('./images/image.jpg')%>" alt="Фото Кусто">
 
                 <div class="profile__section">
                     <div class="profile__info">
@@ -111,9 +112,6 @@
             </div>
         </li> -->
     </template>
-
-    <script type="module" src="./scripts/index.js"></script>
-
 
 </body>
 
