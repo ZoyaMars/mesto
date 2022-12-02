@@ -1,4 +1,4 @@
-export default class FormValidator {
+export class FormValidator {
     constructor(validConfig, formElement) {
         this._formSelector = validConfig.formSelector
         this._inputSelector = validConfig.inputSelector;
@@ -18,6 +18,7 @@ export default class FormValidator {
         errorElement.textContent = errorMessage;
         errorElement.classList.add(this._errorClass);
     };
+
 
     //Удаляет ошибку валидации
     _hideInputError(inputElement) {
@@ -45,7 +46,6 @@ export default class FormValidator {
             return !inputElement.validity.valid;
         });
     };
-
 
     // Настройка кнопки submit 
     _toggleButtonState() {

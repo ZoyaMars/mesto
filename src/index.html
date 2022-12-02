@@ -76,8 +76,8 @@
 
                 <h2 class="popup__title">Новое место</h2>
                 <fieldset class="popup__form-fieldset">
-                    <input type="text" class="popup__field popup__field-place" id="input-place" placeholder="Название" value="" minlength="2" maxlength="30" required>
-                    <span class="popup__input-error input-place-error"></span>
+                    <input type="text" class="popup__field popup__field-place" id="input-name" placeholder="Название" value="" minlength="2" maxlength="30" required>
+                    <span class="popup__input-error input-name-error"></span>
 
                 </fieldset>
                 <fieldset class="popup__form-fieldset">
@@ -96,7 +96,7 @@
     <div class="popup popup_big_image">
         <div class="popup__section">
             <button type="button" class="popup__button-close"></button>
-            <img class="popup__image" src="./images/kirill-pershin-1.jpg" alt="">
+            <img class="popup__image" src="<%=require('./images/joel-filipe-_AjqGGafofE-unsplash.jpg')%>" alt="">
             <h2 class="popup__text"></h2>
         </div>
     </div>
@@ -104,13 +104,13 @@
     <template id="cards">
         <li class="card">
             <button class="button__card" type="button">
-              <img class="card__image" src="./images/kirill-pershin-1404681-unsplash.png" alt=""></button>
+              <img class="card__image" src="<%=require('./images/joel-filipe-_AjqGGafofE-unsplash.jpg')%>" alt=""></button>
             <button type="button" class="card__button_remove"></button>
             <div class="card__section">
                 <h2 class="card__name"></h2>
                 <button type="button" class="button__like"></button>
             </div>
-        </li> -->
+        </li> 
     </template>
 
 </body>
