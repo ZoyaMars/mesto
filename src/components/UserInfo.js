@@ -7,11 +7,11 @@ export class UserInfo {
     }
 
     setUserInfo = (data) => {
-        this._titleElement.textContent = data.name || '';
+        this._titleElement.textContent = data.title || '';
         this._jobElement.textContent = data.job || '';
     }
 
     getUserInfo = () => {
-        return { name: this._titleElement.textContent, job: this._jobElement.textContent };
+        return { title: this._titleElement.textContent, job: this._jobElement.textContent };
     }
 }
