@@ -1,7 +1,7 @@
-export default class Card {
-    constructor(name, link, cardSwitch, openPopupImage) {
-        this._name = name;
-        this._link = link;
+export class Card {
+    constructor({ item }, cardSwitch, openPopupImage) {
+        this._name = item.name;
+        this._link = item.link;
         this._cardSelector = cardSwitch; //switch
         this._openPopupImage = openPopupImage;
     }
@@ -13,21 +13,27 @@ export default class Card {
     }
 
     //Лайк
-    _like() {
+    _like = () => {
         this._likeButton.classList.toggle('button__like_active');
     }
 
+
     //Удаление карточки
-    _removeImage() {
+    _removeImage = () => {
         this._element.closest('.card').remove();
+    }
+
+
+    _handleCardClick = () => {
+        this._openPopupImage({ name: this._name, link: this._link });
     }
 
     _setEventListeners() {
         this._likeButton = this._element.querySelector('.button__like');
-
         this._likeButton.addEventListener('click', () => this._like()); //лайк
         this._element.querySelector('.card__button_remove').addEventListener('click', () => this._removeImage()); //Удаление картинки
-        this._element.querySelector('.button__card').addEventListener('click', () => this._openPopupImage(this._link, this._name)); //открытие картинки
+        this._element.querySelector('.button__card').addEventListener('click', this._handleCardClick); //открытие картинки
+
     }
 
     generateCard() {
