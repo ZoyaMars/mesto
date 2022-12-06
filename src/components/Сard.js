@@ -1,10 +1,11 @@
 export class Card {
-    constructor({ item }, cardSwitch, openPopupImage) {
-        this._name = item.name;
-        this._link = item.link;
+    constructor(dataObject, cardSwitch, openPopupImage) {
+        this._name = dataObject.name;
+        this._link = dataObject.link;
         this._cardSelector = cardSwitch; //switch
         this._openPopupImage = openPopupImage;
     }
+
 
     // Создание template
     _getTemplate() {
@@ -20,9 +21,8 @@ export class Card {
 
     //Удаление карточки
     _removeImage = () => {
-        this._element.closest('.card').remove();
+        this._element.remove()
     }
-
 
     _handleCardClick = () => {
         this._openPopupImage({ name: this._name, link: this._link });

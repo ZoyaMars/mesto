@@ -45,12 +45,15 @@ export class PopupWithForm extends Popup {
         } else {
             this._formElement.reset();
         }
-        this._errorsResetCallBack;
+        this._errorsResetCallBack();
+
         super.open();
+
     }
 
     close() {
         super.close();
         this._formElement.reset();
+
     }
 }

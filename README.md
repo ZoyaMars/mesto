@@ -1,14 +1,21 @@
 # Проект: Место
 
-Первая практическая работа по блоку JS.
+Интерактивная страница, на которой можно: добавлять картинки, удалять картинки, ставить лайки, а также менять имя профиля.
+
+**Использованы технологии:** 
+* HTML / CSS
+* Figma
+* БЭМ
+* Адаптивная верстка
+* Валидация форм при помощи JS.
+* Использованы ES6-классы
+* ООП
+* Webpack
+* JavaScript
 
 **Figma**
 
-* [Ссылка на макет в Figma](https://www.figma.com/file/2cn9N9jSkmxD84oJik7xL7/JavaScript.-Sprint-4?node-id=0%3A1)
-
-### Используемые технологии
-* HTML / CSS / BEM
-* JavaScript
+* [Ссылка на макет в Figma](https://www.figma.com/file/kRVLKwYG3d1HGLvh7JFWRT/JavaScript.-Sprint-6?node-id=1124%3A73&t=3jloOFD84jhcyQiM-0)
 
 
 * [Ссылка на проект в GH Pages](https://zoyamars.github.io/mesto/)

@@ -33,8 +33,8 @@ Array.from(document.forms).forEach(formElement => {
 const viewPopup = new PicturePopup(imagePopupSelector, popupConfiguration, viewPopupConfiguration);
 viewPopup.setEventListeners();
 
-const createCard = (item) => {
-    const card = new Card({ item }, cardSwitch, viewPopup.open.bind(viewPopup));
+const createCard = (dataObject) => {
+    const card = new Card(dataObject, cardSwitch, viewPopup.open.bind(viewPopup));
     return card.generateCard();
 }
 
@@ -44,7 +44,7 @@ const cardsContainer = new Section({
     renderer: createCard,
 }, cardsContainerSelector);
 
-cardsContainer.renderAll();
+cardsContainer.renderAllInitialItems();
 
 const handleCardSubmit = (item) => {
     cardsContainer.addItem(item);
@@ -55,7 +55,7 @@ const newCardPopup = new PopupWithForm(
     newPlaceFormName,
     popupConfiguration,
     formConfiguration,
-    formValidators[newPlaceFormName].deleteInputError,
+    formValidators[newPlaceFormName].resetValidation,
     handleCardSubmit,
 );
 newCardPopup.setEventListeners();
@@ -77,7 +77,7 @@ const profilePopup = new PopupWithForm(
     profileFormName,
     popupConfiguration,
     formConfiguration,
-    formValidators[profileFormName].deleteInputError,
+    formValidators[profileFormName].resetValidation,
     handleProfileFormSubmit,
     user.getUserInfo,
 );
