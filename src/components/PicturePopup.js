@@ -16,7 +16,4 @@ export class PicturePopup extends Popup {
         super.open();
     }
 
-    setEventListeners() {
-        super.setEventListeners();
-    }
 }

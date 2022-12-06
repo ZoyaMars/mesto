@@ -85,7 +85,7 @@ export class FormValidator {
     };
 
     //Убирает ошибку инпутов
-    resetValidation() {
+    resetValidation = () => {
         this._inputList.forEach(inputElement => {
             this._hideInputError(inputElement);
         })
