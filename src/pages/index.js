@@ -4,6 +4,8 @@ import Section from "../components/Section.js";
 import { Card } from "../components/Сard";
 import { FormValidator } from "../components/FormValidator.js";
 import { PopupWithForm } from "../components/PopupWithForm.js";
+import { Api } from "../components/Api";
+
 import { UserInfo } from "../components/UserInfo.js";
 import { PicturePopup } from "../components/PicturePopup";
 import {
@@ -23,7 +25,55 @@ import {
     profilePopupSelector,
     viewPopupConfiguration,
     imagePopupSelector,
+    myId,
 } from "../components/constanst";
+
+const api = new Api({
+    baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-54',
+    headers: {
+        authorization: '8d3c6a15-ceca-43f0-a891-5377cbbfaafe',
+        'Content-Type': 'application/json'
+    }
+});
+
+api.getUserInfo()
+    .then(result => {
+        user.setUserInfo({ title: result.name, job: result.about });
+        user.setUserAvatar({ avatar: result.avatar });
+    })
+    .catch((err) => {
+        console.log(err);
+    });
+
+
+const openDeletePopup = (data) => {
+    deletePopup.setEventListeners(data);
+    deletePopup.open();
+}
+
+const createCard = (item) => {
+    const card = new Card({ item },
+        cardSwitch,
+        myId,
+        viewPopup.open.bind(viewPopup),
+        openDeletePopup,
+        api,
+    );
+    return card.generateCard();
+};
+
+api.getInitialCards()
+    .then(result => {
+        const cardsContainer = new Section({
+            items: result.reverse(),
+            renderer: createCard,
+        }, cardsContainerSelector);
+
+        cardsContainer.renderAllInitialItems();
+    })
+    .catch((err) => {
+        console.log(err);
+    });
 
 Array.from(document.forms).forEach(formElement => {
     formValidators[formElement.name] = new FormValidator(validConfig, formElement);
@@ -33,10 +83,7 @@ Array.from(document.forms).forEach(formElement => {
 const viewPopup = new PicturePopup(imagePopupSelector, popupConfiguration, viewPopupConfiguration);
 viewPopup.setEventListeners();
 
-const createCard = (dataObject) => {
-    const card = new Card(dataObject, cardSwitch, viewPopup.open.bind(viewPopup));
-    return card.generateCard();
-}
+
 
 
 const cardsContainer = new Section({

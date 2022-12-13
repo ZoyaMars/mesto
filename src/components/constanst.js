@@ -77,3 +77,6 @@ export const profilePopupSelector = 'popup_edit-profile';
 export const imagePopupSelector = 'popup_big_image';
 export const newPlaceFormName = 'add-image';
 export const profileFormName = 'profileData';
+
+
+export const myId = '59d05da5ea81d432f473a759';
