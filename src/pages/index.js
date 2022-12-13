@@ -94,9 +94,6 @@ Array.from(document.forms).forEach(formElement => {
 const viewPopup = new PicturePopup(imagePopupSelector, popupConfiguration, viewPopupConfiguration);
 viewPopup.setEventListeners();
 
-
-
-
 const cardsContainer = new Section({
     items: initialCards.reverse(),
     renderer: createCard,
