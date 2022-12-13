@@ -75,6 +75,17 @@ api.getInitialCards()
         console.log(err);
     });
 
+const handleProfileFormSubmit = (data) => {
+    api.patchUserInfo(data)
+        .then((result) => {
+            user.setUserInfo({ title: result.name, job: result.about });
+            profilePopup.close();
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+};
+
 Array.from(document.forms).forEach(formElement => {
     formValidators[formElement.name] = new FormValidator(validConfig, formElement);
     formValidators[formElement.name].enableValidation();
@@ -109,11 +120,6 @@ newCardPopup.setEventListeners();
 
 const addCardSubmitHandler = () => {
     newCardPopup.open();
-};
-
-//Отправка формы
-function handleProfileFormSubmit(data) {
-    user.setUserInfo(data);
 };
 
 
