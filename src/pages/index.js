@@ -8,11 +8,11 @@ import { Api } from "../components/Api";
 
 import { UserInfo } from "../components/UserInfo.js";
 import { PicturePopup } from "../components/PicturePopup";
+import { PopupWithConfirmation } from '../components/PopupWithConfirmation.js';
 import {
     popupEditProfileOpenBtn,
     popupAddCardOpenBtn,
     cardSwitch,
-    initialCards,
     validConfig,
     formValidators,
     formConfiguration,
@@ -26,6 +26,11 @@ import {
     viewPopupConfiguration,
     imagePopupSelector,
     myId,
+    deletePopupSelector,
+    confirmationButtonSelector,
+    popupAvatarOpenBtn,
+    avatarPopupSelector,
+    avatarFormName,
 } from "../components/constanst";
 
 const api = new Api({
@@ -45,6 +50,18 @@ api.getUserInfo()
         console.log(err);
     });
 
+const user = new UserInfo(profileConfiguration);
+
+const handleAvatarSubmit = (data) => {
+    api.patchAvatarInfo(data)
+        .then((result) => {
+            user.setUserAvatar({avatar: result.avatar});
+            avatarPopup.close();
+        })
+        .catch((err) => {
+            console.log(err);
+        })
+};
 
 const openDeletePopup = (data) => {
     deletePopup.setEventListeners(data);
@@ -54,8 +71,8 @@ const openDeletePopup = (data) => {
 const createCard = (item) => {
     const card = new Card({ item },
         cardSwitch,
-        myId,
         viewPopup.open.bind(viewPopup),
+        myId,
         openDeletePopup,
         api,
     );
@@ -65,9 +82,10 @@ const createCard = (item) => {
 api.getInitialCards()
     .then(result => {
         const cardsContainer = new Section({
-            items: result.reverse(),
-            renderer: createCard,
-        }, cardsContainerSelector);
+                items: result.reverse(),
+                renderer: createCard,
+            }, cardsContainerSelector
+        );
 
         cardsContainer.renderAllInitialItems();
     })
@@ -94,15 +112,21 @@ Array.from(document.forms).forEach(formElement => {
 const viewPopup = new PicturePopup(imagePopupSelector, popupConfiguration, viewPopupConfiguration);
 viewPopup.setEventListeners();
 
-const cardsContainer = new Section({
-    items: initialCards.reverse(),
-    renderer: createCard,
-}, cardsContainerSelector);
+const handleCardSubmit = (data) => {
+    api.addNewCard(data)
+        .then(result => {
+            const cardsContainer = new Section({
+                    items: result,
+                    renderer: createCard,
+                }, cardsContainerSelector
+            );
 
-cardsContainer.renderAllInitialItems();
-
-const handleCardSubmit = (item) => {
-    cardsContainer.addItem(item);
+            cardsContainer.addItem(result);
+            newCardPopup.close();
+        })
+        .catch((err) => {
+            console.log(err)
+        });
 };
 
 const newCardPopup = new PopupWithForm(
@@ -118,9 +142,6 @@ newCardPopup.setEventListeners();
 const addCardSubmitHandler = () => {
     newCardPopup.open();
 };
-
-
-const user = new UserInfo(profileConfiguration);
 
 const profilePopup = new PopupWithForm(
     profilePopupSelector,
@@ -138,7 +159,28 @@ const handleProfilePopupOpen = () => {
     profilePopup.open();
 };
 
+const handleAvatarPopupOpen = () => {
+    avatarPopup.open();
+}
+
+const avatarPopup = new PopupWithForm(
+    avatarPopupSelector,
+    avatarFormName,
+    popupConfiguration,
+    formConfiguration,
+    formValidators[avatarFormName].resetValidation,
+    handleAvatarSubmit
+);
+
+const deletePopup = new PopupWithConfirmation(
+    deletePopupSelector,
+    popupConfiguration,
+    confirmationButtonSelector,
+    api,
+);
+
 //Открытие попапа редактирования профиля
 popupEditProfileOpenBtn.addEventListener('click', handleProfilePopupOpen);
-
+popupAvatarOpenBtn.addEventListener('click', handleAvatarPopupOpen);
 popupAddCardOpenBtn.addEventListener('click', addCardSubmitHandler);
+avatarPopup.setEventListeners();
