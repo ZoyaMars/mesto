@@ -26,7 +26,7 @@ export const formConfiguration = {
 
 export const popupConfiguration = {
     activeModifier: 'popup_active',
-    closeBtnSelector: 'popup__button-close',
+    buttonCloseSelector: 'popup__button-close',
 }
 
 export const profileConfiguration = {
@@ -46,7 +46,7 @@ export const profilePopupSelector = 'popup_edit-profile';
 export const imagePopupSelector = 'popup_big_image';
 export const newPlaceFormName = 'add-image';
 export const profileFormName = 'profileData';
-export const deletePopupSelector = 'popup_image_delete';
+export const confirmationPopupSelector = 'popup_image_delete';
 export const confirmationButtonSelector = 'popup__button_image_delete';
 export const avatarPopupSelector = 'popup_edit-avatar';
 export const avatarFormName = 'avatar';
