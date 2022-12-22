@@ -1,14 +1,14 @@
 import '../pages/index.css';
 
 import Section from "../components/Section.js";
-import {Card} from "../components/Сard";
-import {FormValidator} from "../components/FormValidator.js";
-import {PopupWithForm} from "../components/PopupWithForm.js";
-import {Api} from "../components/Api";
+import { Card } from "../components/Сard";
+import { FormValidator } from "../components/FormValidator.js";
+import { PopupWithForm } from "../components/PopupWithForm.js";
+import { Api } from "../components/Api";
 
-import {UserInfo} from "../components/UserInfo.js";
-import {PicturePopup} from "../components/PicturePopup";
-import {PopupWithConfirmation} from '../components/PopupWithConfirmation.js';
+import { UserInfo } from "../components/UserInfo.js";
+import { PicturePopup } from "../components/PicturePopup";
+import { PopupWithConfirmation } from '../components/PopupWithConfirmation.js';
 import {
     avatarFormName,
     avatarPopupSelector,
@@ -31,7 +31,7 @@ import {
     validConfig,
     viewPopupConfiguration,
 } from "../utils/constanst";
-import {RenderLoading} from "../components/RenderLoading";
+import { RenderLoading } from "../components/RenderLoading";
 
 const api = new Api({
     baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-54',
@@ -48,7 +48,7 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
         userId = userData._id;
         user.setUserInfo({ title: userData.name, job: userData.about });
         user.setUserAvatar({ avatar: userData.avatar });
-        renderCards.renderAllInitialItems(InitialCards);
+        cardsSection.renderAllInitialItems(InitialCards);
     })
     .catch((err) => {
         console.log(`Error: ${err}`);
@@ -56,25 +56,24 @@ Promise.all([api.getInitialCards(), api.getUserInfo()])
 
 const user = new UserInfo(profileConfiguration);
 
-const renderCard = (data) => {
+const createCard = (data) => {
     const newCard = new Card(
         data,
         cardSwitch,
         userId,
         data._id,
-        data.owner._id,
-        {
+        data.owner._id, {
             handleCardClick: (name, image) => {
                 viewPopup.open(name, image);
             },
             handleDeleteClick: (cardId) => {
-                deletePopup.open();
-                deletePopup.setCallback(() => {
+                confirmationPopup.open();
+                confirmationPopup.setCallback(() => {
                     api
                         .deleteCard(cardId)
                         .then(() => {
                             newCard.deletePlace();
-                            deletePopup.close();
+                            confirmationPopup.close();
                         })
                         .catch((err) => {
                             console.log(`Error: ${err}`);
@@ -106,10 +105,9 @@ const renderCard = (data) => {
     return newCard.generateCard();
 };
 
-const renderCards = new Section(
-    {
+const cardsSection = new Section({
         renderer: (data) => {
-            renderCards.addItem(renderCard(data));
+            cardsSection.addItem(createCard(data));
         },
     },
     cardsContainerSelector
@@ -154,7 +152,7 @@ const handleCardSubmit = (data) => {
     api
         .addNewCard(data)
         .then((data) => {
-            renderCards.addItem(renderCard(data));
+            cardsSection.addItem(createCard(data));
             newCardPopup.close();
         })
         .catch((err) => {
@@ -163,11 +161,11 @@ const handleCardSubmit = (data) => {
         .finally(() => loaderNewCard.renderLoading(false));
 };
 
-const handleFormElement = (formName) => document.forms[formName]
+const getFormByName = (formName) => document.forms[formName]
 
 const newCardPopup = new PopupWithForm(
     newPlacePopupSelector,
-    handleFormElement(newPlaceFormName),
+    getFormByName(newPlaceFormName),
     popupConfiguration,
     formConfiguration,
     formValidators[newPlaceFormName].resetValidation,
@@ -181,7 +179,7 @@ const openAddCardPopup = () => {
 
 const profilePopup = new PopupWithForm(
     profilePopupSelector,
-    handleFormElement(profileFormName),
+    getFormByName(profileFormName),
     popupConfiguration,
     formConfiguration,
     formValidators[profileFormName].resetValidation,
@@ -211,7 +209,7 @@ const handleAvatarPopupOpen = () => {
 
 const avatarPopup = new PopupWithForm(
     avatarPopupSelector,
-    handleFormElement(avatarFormName),
+    getFormByName(avatarFormName),
     popupConfiguration,
     formConfiguration,
     formValidators[avatarFormName].resetValidation,
@@ -223,11 +221,11 @@ const loaderAvatar = new RenderLoading({
     textLoader: "Сохранение...",
 });
 
-const deletePopup = new PopupWithConfirmation(
+const confirmationPopup = new PopupWithConfirmation(
     confirmationPopupSelector,
     popupConfiguration,
     confirmationButtonSelector,
-    handleFormElement(newPlaceFormName),
+    getFormByName(newPlaceFormName),
 );
 
 //Открытие попапа редактирования профиля
@@ -235,4 +233,4 @@ popupEditProfileOpenBtn.addEventListener('click', handleProfilePopupOpen);
 popupAvatarOpenBtn.addEventListener('click', handleAvatarPopupOpen);
 popupAddCardOpenBtn.addEventListener('click', openAddCardPopup);
 avatarPopup.setEventListeners();
-deletePopup.setEventListeners();
+confirmationPopup.setEventListeners();

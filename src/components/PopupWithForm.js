@@ -30,7 +30,6 @@ export class PopupWithForm extends Popup {
 
     _handleSubmit = (evt) => {
         evt.preventDefault();
-        // this._submitBtn.textContent = 'Сохранение...';
         this._submitBtn.disabled = true;
         this._submitCallBack(this._getInputValues());
     }
