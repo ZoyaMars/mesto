@@ -31,7 +31,6 @@ import {
     validConfig,
     viewPopupConfiguration,
 } from "../utils/constanst";
-import { RenderLoading } from "../components/RenderLoading";
 
 const api = new Api({
     baseUrl: 'https://mesto.nomoreparties.co/v1/cohort-54',
@@ -69,14 +68,17 @@ const createCard = (data) => {
             handleDeleteClick: (cardId) => {
                 confirmationPopup.open();
                 confirmationPopup.setCallback(() => {
+                    confirmationPopup.setSubmitButtonText('Удаление...')
                     api
                         .deleteCard(cardId)
                         .then(() => {
                             newCard.deletePlace();
                             confirmationPopup.close();
+                            confirmationPopup.setSubmitButtonText('Да')
                         })
                         .catch((err) => {
                             console.log(`Error: ${err}`);
+                            confirmationPopup.setSubmitButtonText('Да')
                         })
                 });
             },
@@ -114,29 +116,31 @@ const cardsSection = new Section({
 );
 
 const handleAvatarSubmit = (data) => {
-    loaderAvatar.renderLoading(true);
+    avatarPopup.setSubmitButtonText('Сохранение...');
     api.patchAvatarInfo(data)
         .then((result) => {
             user.setUserAvatar({ avatar: result.avatar });
             avatarPopup.close();
+            avatarPopup.setSubmitButtonText('Сохранить');
         })
         .catch((err) => {
             console.log(err);
+            avatarPopup.setSubmitButtonText('Сохранить');
         })
-        .finally(() => loaderAvatar.renderLoading(false));
 };
 
 const handleProfileFormSubmit = (data) => {
-    loaderProfileEdit.renderLoading(true);
+    profilePopup.setSubmitButtonText('Сохранение...');
     api.patchUserInfo(data)
         .then((result) => {
             user.setUserInfo({ title: result.name, job: result.about });
             profilePopup.close();
+            profilePopup.setSubmitButtonText('Сохранить');
         })
         .catch((err) => {
             console.log(err);
+            profilePopup.setSubmitButtonText('Сохранить');
         })
-        .finally(() => loaderProfileEdit.renderLoading(false));
 };
 
 Array.from(document.forms).forEach(formElement => {
@@ -148,17 +152,18 @@ const viewPopup = new PicturePopup(imagePopupSelector, popupConfiguration, viewP
 viewPopup.setEventListeners();
 
 const handleCardSubmit = (data) => {
-    loaderNewCard.renderLoading(true);
+    newCardPopup.setSubmitButtonText('Создание...')
     api
         .addNewCard(data)
         .then((data) => {
             cardsSection.addItem(createCard(data));
             newCardPopup.close();
+            newCardPopup.setSubmitButtonText('Создать')
         })
         .catch((err) => {
             console.log(`Form error: ${err}`);
+            newCardPopup.setSubmitButtonText('Создать')
         })
-        .finally(() => loaderNewCard.renderLoading(false));
 };
 
 const getFormByName = (formName) => document.forms[formName]
@@ -187,16 +192,6 @@ const profilePopup = new PopupWithForm(
     user.getUserInfo,
 );
 
-const loaderProfileEdit = new RenderLoading({
-    popup: profilePopup,
-    textLoader: "Сохранение...",
-});
-
-const loaderNewCard = new RenderLoading({
-    popup: newCardPopup,
-    textLoader: "Создание...",
-});
-
 profilePopup.setEventListeners();
 
 const handleProfilePopupOpen = () => {
@@ -215,11 +210,6 @@ const avatarPopup = new PopupWithForm(
     formValidators[avatarFormName].resetValidation,
     handleAvatarSubmit
 );
-
-const loaderAvatar = new RenderLoading({
-    popup: avatarPopup,
-    textLoader: "Сохранение...",
-});
 
 const confirmationPopup = new PopupWithConfirmation(
     confirmationPopupSelector,

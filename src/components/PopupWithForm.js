@@ -34,6 +34,10 @@ export class PopupWithForm extends Popup {
         this._submitCallBack(this._getInputValues());
     }
 
+    setSubmitButtonText = (buttonText) => {
+        this._submitBtn.textContent = buttonText;
+    }
+
     setEventListeners() {
         super.setEventListeners();
         this._formElement.addEventListener('submit', this._handleSubmit);
